@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import firebase from 'firebase';
+import { ThemeProvider } from '@emotion/react';
+import defaultTheme from './themes/default';
 
 const config = {
 	apiKey: process.env.REACT_APP_FIREBASE_API,
@@ -17,7 +19,9 @@ firebase.initializeApp(config);
 
 ReactDOM.render(
 	<React.StrictMode>
-		<App />
+		<ThemeProvider theme={defaultTheme}>
+			<App />
+		</ThemeProvider>
 	</React.StrictMode>,
 	document.getElementById('root')
 );
