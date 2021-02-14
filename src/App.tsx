@@ -1,10 +1,11 @@
 import React from 'react';
 import Button from './components/Button/Button';
+import ColorsPage from './pages/ComponentDocsite/Colors';
 
 const App = () => {
 	return (
 		<div>
-			<Button>Hi</Button>
+			<ColorsPage />
 		</div>
 	);
 };
