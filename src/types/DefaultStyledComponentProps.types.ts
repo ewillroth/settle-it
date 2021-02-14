@@ -1,4 +1,4 @@
-import { theme } from './theme.type';
+import { theme } from '../themes/theme.type';
 
 export interface DefaultStyledComponentProps {
 	theme?: theme;

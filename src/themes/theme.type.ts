@@ -13,6 +13,13 @@ export interface theme {
 		default: string;
 		bold: string;
 	};
+	fontSizes: {
+		small: string;
+		default: string;
+		large: string;
+		larger: string;
+		largest: string;
+	};
 }
 
 export interface Colors {

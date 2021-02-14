@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { DefaultStyledComponentProps } from '../../types/DefaultStyledComponentProps.types';
 import defaultTheme from '../../themes/default';
-import { Colors } from '../../types/theme.type';
+import { Colors } from '../../themes/theme.type';
 
 interface StyledColorProps extends DefaultStyledComponentProps {
 	color: string;
@@ -32,7 +32,6 @@ const ColorBox = styled.div<StyledColorProps>`
 	background-color: ${({ color }) => color};
 	height: 48px;
 	width: 48px;
-	border: 1px solid #0a0b0a;
 `;
 
 const Swatch = styled.div`
@@ -62,8 +61,8 @@ const ColorVariant: React.FC<ColorProps> = ({ color }) => {
 	return (
 		<ColorRow>
 			{Object.values(color).map((colorVariant, index) => (
-				<Swatch>
-					<ColorBox color={colorVariant} key={colorVariant} />
+				<Swatch key={colorVariant}>
+					<ColorBox color={colorVariant} />
 					<ColorName>{Object.keys(color)[index]}</ColorName>
 					<ColorName>{colorVariant}</ColorName>
 				</Swatch>
@@ -76,11 +75,11 @@ const ColorsPage = () => {
 	return (
 		<ColorsPageContainer>
 			{Object.values(defaultTheme.colors).map((color, index) => (
-				<ColorSection>
+				<ColorSection key={color.default}>
 					<ColorType>
 						{Object.keys(defaultTheme.colors)[index]}
 					</ColorType>
-					<ColorVariant color={color} key={color.default} />
+					<ColorVariant color={color} />
 				</ColorSection>
 			))}
 		</ColorsPageContainer>

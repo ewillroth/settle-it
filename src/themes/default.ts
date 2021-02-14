@@ -1,4 +1,5 @@
-import { theme } from '../types/theme.type';
+import rem from '../utils/rem/rem';
+import { theme } from './theme.type';
 
 const defaultTheme: theme = {
 	colors: {
@@ -13,8 +14,10 @@ const defaultTheme: theme = {
 		},
 		secondary: {
 			light: '#C1D7D7',
-			default: '#9BBFBF',
-			dark: '#598888',
+			default: '#517B7B',
+			dark: '#406363',
+			darker: '#304A4A',
+			darkest: '#203131',
 		},
 		success: {
 			lighter: '#9DD2A2',
@@ -52,6 +55,13 @@ const defaultTheme: theme = {
 		light: '200',
 		default: '400',
 		bold: '700',
+	},
+	fontSizes: {
+		small: rem(8),
+		default: rem(12),
+		large: rem(16),
+		larger: rem(24),
+		largest: rem(32),
 	},
 };
 
