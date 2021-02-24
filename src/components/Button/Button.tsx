@@ -6,25 +6,35 @@ import {
 	StyledButtonProps,
 } from './Button.types';
 import rem from '../../utils/rem/rem';
-import { SyntheticEvent, useState } from 'react';
+import { useState } from 'react';
 
 const StyledButton = styled.button<StyledButtonProps>`
-	background-color: ${({ theme, variant }) => {
+	background-color: ${({ theme, variant, active }) => {
 		switch (variant) {
 			case ButtonVariants.destructive:
-				return theme.colors.error.default;
+				return active
+					? theme.colors.error.darker
+					: theme.colors.error.default;
 			case ButtonVariants.secondary:
-				return theme.colors.secondary.default;
+				return active
+					? theme.colors.secondary.darker
+					: theme.colors.secondary.default;
 			case ButtonVariants.tertiary:
-				return theme.colors.greyscale.lightest;
+				return active
+					? theme.colors.greyscale.light
+					: theme.colors.greyscale.lightest;
 			default:
-				return theme.colors.primary.default;
+				return active
+					? theme.colors.primary.darkest
+					: theme.colors.primary.default;
 		}
 	}};
-	color: ${({ theme, variant }) => {
+	color: ${({ theme, variant, active }) => {
 		switch (variant) {
 			case ButtonVariants.tertiary:
-				return theme.colors.primary.default;
+				return active
+					? theme.colors.primary.dark
+					: theme.colors.primary.default;
 			default:
 				return theme.colors.greyscale.lightest;
 		}
@@ -61,22 +71,32 @@ const StyledButton = styled.button<StyledButtonProps>`
 	}
 
 	:hover {
-		background-color: ${({ theme, variant }) => {
+		background-color: ${({ theme, variant, active }) => {
 			switch (variant) {
 				case ButtonVariants.destructive:
-					return theme.colors.error.dark;
+					return active
+						? theme.colors.error.darker
+						: theme.colors.error.dark;
 				case ButtonVariants.secondary:
-					return theme.colors.secondary.dark;
+					return active
+						? theme.colors.secondary.darker
+						: theme.colors.secondary.dark;
 				case ButtonVariants.tertiary:
-					return theme.colors.greyscale.lighter;
+					return active
+						? theme.colors.greyscale.light
+						: theme.colors.greyscale.lighter;
 				default:
-					return theme.colors.primary.darker;
+					return active
+						? theme.colors.primary.darkest
+						: theme.colors.primary.darker;
 			}
 		}};
-		color: ${({ theme, variant }) => {
+		color: ${({ theme, variant, active }) => {
 			switch (variant) {
 				case ButtonVariants.tertiary:
-					return theme.colors.primary.default;
+					return active
+						? theme.colors.primary.dark
+						: theme.colors.primary.default;
 				default:
 					return theme.colors.greyscale.lightest;
 			}

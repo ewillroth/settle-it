@@ -2,7 +2,7 @@ import { SyntheticEvent } from 'react';
 import { DefaultStyledComponentProps } from '../../types/DefaultStyledComponentProps.types';
 
 export interface ButtonProps {
-	children: any;
+	children: string | JSX.Element;
 	variant?: ButtonVariants;
 	size?: ButtonSizes;
 }

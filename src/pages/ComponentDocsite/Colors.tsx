@@ -14,6 +14,14 @@ interface ColorProps extends DefaultStyledComponentProps {
 const ColorsPageContainer = styled.div`
 	display: flex;
 	flex-wrap: wrap;
+	height: 100%;
+	width: 100%;
+	background-color: #ccc;
+
+	@media (max-width: 432px) {
+		align-items: center;
+		flex-direction: column;
+	}
 `;
 
 const ColorSection = styled.div`
@@ -26,12 +34,18 @@ const ColorSection = styled.div`
 
 const ColorRow = styled.div`
 	display: flex;
+	flex-wrap: wrap;
 `;
 
 const ColorBox = styled.div<StyledColorProps>`
 	background-color: ${({ color }) => color};
 	height: 48px;
 	width: 48px;
+
+	@media (max-width: 432px) {
+		height: 32px;
+		width: 32px;
+	}
 `;
 
 const Swatch = styled.div`
@@ -40,6 +54,10 @@ const Swatch = styled.div`
 	align-items: center;
 	justify-content: center;
 	margin: 8px;
+
+	@media (max-width: 432px) {
+		margin: 2px;
+	}
 `;
 
 const ColorName = styled.p<DefaultStyledComponentProps>`
@@ -55,6 +73,10 @@ const ColorType = styled.p<DefaultStyledComponentProps>`
 	text-transform: uppercase;
 	font-weight: ${({ theme }) => theme.fontWeights.bold};
 	font-family: ${({ theme }) => theme.fontFamily};
+
+	@media (max-width: 432px) {
+		font-size: 12px;
+	}
 `;
 
 const ColorVariant: React.FC<ColorProps> = ({ color }) => {

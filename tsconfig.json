@@ -16,5 +16,5 @@
 		"noEmit": true,
 		"jsx": "react-jsx"
 	},
-	"include": ["src", "setupTests.tsx"]
+	"include": ["src", "setupTests.tsx", "jestEmotion.d.ts", "jest.d.ts"]
 }
