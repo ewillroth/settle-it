@@ -1,6 +1,6 @@
-import styled from '@emotion/styled';
 import Button from '../../components/Button/Button';
 import Input from '../../components/Input/Input';
+import styled from '@emotion/styled';
 
 const AddSuggestionsContainer = styled.div`
 	width: 100%;
@@ -15,7 +15,9 @@ const AddSuggestionsPage = () => {
 	return (
 		<AddSuggestionsContainer>
 			<Input />
-			<Button>Add Suggestion</Button>
+			<Button onClick={() => navigator.vibrate(200)}>
+				Add Suggestion
+			</Button>
 		</AddSuggestionsContainer>
 	);
 };
