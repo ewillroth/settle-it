@@ -1,13 +1,13 @@
 import styled from '@emotion/styled';
-import { DefaultStyledComponentProps } from '../../types/DefaultStyledComponentProps.types';
+import { StyledComponentProps } from '../../types/DefaultStyledComponentProps.types';
 import defaultTheme from '../../themes/default';
 import { Colors } from '../../themes/theme.type';
 
-interface StyledColorProps extends DefaultStyledComponentProps {
+interface StyledColorProps extends StyledComponentProps {
 	color: string;
 }
 
-interface ColorProps extends DefaultStyledComponentProps {
+interface ColorProps extends StyledComponentProps {
 	color: Colors;
 }
 
@@ -60,14 +60,14 @@ const Swatch = styled.div`
 	}
 `;
 
-const ColorName = styled.p<DefaultStyledComponentProps>`
+const ColorName = styled.p<StyledComponentProps>`
 	font-size: 12px;
 	margin: 4px;
 	font-family: ${({ theme }) => theme.fontFamily};
 	text-transform: lowercase;
 `;
 
-const ColorType = styled.p<DefaultStyledComponentProps>`
+const ColorType = styled.p<StyledComponentProps>`
 	font-size: 16px;
 	margin: 4px;
 	text-transform: uppercase;
