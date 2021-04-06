@@ -1,9 +1,9 @@
-import AddSuggestionsPage from './pages/AddSuggestions/AddSuggestions';
+import ComingSoonPage from './pages/ComingSoon/ComingSoon';
 
 const App = () => {
 	return (
 		<div>
-			<AddSuggestionsPage />
+			<ComingSoonPage />
 		</div>
 	);
 };
