@@ -1,4 +1,4 @@
-import { DefaultStyledComponentProps } from '../../types/DefaultStyledComponentProps.types';
+import { StyledComponentProps } from '../../types/DefaultStyledComponentProps.types';
 
 export interface ButtonProps {
 	children: string | JSX.Element;
@@ -19,7 +19,7 @@ export enum ButtonVariants {
 	destructive = 'destructive',
 }
 
-export interface StyledButtonProps extends DefaultStyledComponentProps {
+export interface StyledButtonProps extends StyledComponentProps {
 	variant?: ButtonVariants;
 	size?: ButtonSizes;
 	active?: boolean;

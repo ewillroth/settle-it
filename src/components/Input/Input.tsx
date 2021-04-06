@@ -1,7 +1,7 @@
+import { StyledComponentProps } from '../../types/DefaultStyledComponentProps.types';
 import styled from '@emotion/styled';
-import { DefaultStyledComponentProps } from '../../types/DefaultStyledComponentProps.types';
 
-const SuggestionInput = styled('input')<DefaultStyledComponentProps>`
+const SuggestionInput = styled('input')<StyledComponentProps>`
 	width: 80%;
 	margin: 12px;
 	padding: 4px;
@@ -15,8 +15,8 @@ const SuggestionInput = styled('input')<DefaultStyledComponentProps>`
 	}
 `;
 
-const Input = () => {
-	return <SuggestionInput />;
+const Input = (props: any) => {
+	return <SuggestionInput {...props} />;
 };
 
 export default Input;
