@@ -1,22 +1,23 @@
 import styled from '@emotion/styled';
 import { DefaultStyledComponentProps } from '../../types/DefaultStyledComponentProps.types';
+import rem from '../../utils/rem/rem';
 
-const SuggestionInput = styled('input')<DefaultStyledComponentProps>`
-	width: 80%;
-	margin: 12px;
-	padding: 4px;
-	font-size: 16px;
+const StyledInput = styled('input')<DefaultStyledComponentProps>`
+	width: 100%;
+	margin: ${rem(12)};
+	padding: ${rem(4)};
+	font-size: ${({ theme }) => theme.fontSizes.large};
 	font-family: ${({ theme }) => theme.fontFamily};
-	border: 2px solid black;
+	border: 2px solid ${({ theme }) => theme.colors.greyscale.darkest};
 
 	:focus {
-		border: 2px solid red;
+		border: 2px solid ${({ theme }) => theme.colors.primary.default};
 		outline: none;
 	}
 `;
 
 const Input = () => {
-	return <SuggestionInput />;
+	return <StyledInput />;
 };
 
 export default Input;
