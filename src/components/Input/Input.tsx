@@ -1,3 +1,4 @@
+import { StyledComponentProps } from '../../types/DefaultStyledComponentProps.types';
 import styled from '@emotion/styled';
 import { DefaultStyledComponentProps } from '../../types/DefaultStyledComponentProps.types';
 import rem from '../../utils/rem/rem';

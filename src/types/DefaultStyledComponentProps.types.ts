@@ -1,5 +1,5 @@
 import { theme } from '../themes/theme.type';
 
-export interface DefaultStyledComponentProps {
+export interface StyledComponentProps {
 	theme?: theme;
 }
